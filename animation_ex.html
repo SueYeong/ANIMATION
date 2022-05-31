@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation_ex</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrap{
+        height: 50vh;
+        display: flex;
+        align-items: end;       
+        background-color: aliceblue ;
+    }
+    
+
+    .item{
+        width: 100px;
+        height: 100px;
+        background-color: olivedrab;
+        animation-name: move;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        font-size: 100px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+    }
+
+    .item_2{
+        animation-duration: 1.5s;
+    }
+
+    .item_3{
+        animation-duration: 1s;
+    }
+
+    @keyframes move {
+        0%{
+            transform: translate(0,0);
+        }
+        100%{
+            transform: translate(100vh,100%);
+        }
+    }
+    
+    .on{
+        display: none;
+    }
+
+    .show{
+        background-color: black;
+    }
+
+
+</style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="item item_1">1</div>
+        <div class="item item_2">2</div>
+        <div class="item item_3">3</div>
+    </div>
+
+    <script>
+        const wrapEl = document.querySelector('.wrap')
+
+        const handleClick = (e) =>{
+            if(e.target.classList.contains('item')){
+                e.target.classList.add('show')
+            }
+        }
+
+        wrapEl.addEventListener('click', handleClick)
+    </script>
+</body>
+</html>
