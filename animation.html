@@ -15,6 +15,42 @@
             width: 300px;
             height: 300px;
             background-color: gold;
+            animation-name: move;
+            /* =>애니메이션 이름 */
+
+            animation-duration: 2s;
+            /* =>애니메이션 재생시간 */
+
+            /* animation-delay: 1s; */
+            /* =>애니메이션 지연시간 */
+
+            animation-iteration-count: infinite;
+            /* =>반복횟수 */
+            /* =>infinite: 무한으로 반복할수 있음 */
+
+            /* animation-direction: reverse; */
+            animation-direction: alternate;
+            /* animation-direction: alternate-reverse; */
+            /* =>애니메이션 방향
+            =>alternate값을 제일 많이 사용함 */
+
+            animation-fill-mode: forwards;
+            /* =>애니메이션 마지막 위치에서 멈춤 */
+        }
+
+        @keyframes move {
+            0%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(200px,200px) rotateZ(360deg);
+
+            }
+            100%{
+                transform: translate(400px,0);
+                background-color: black;
+                border-radius: 100%;
+            }
         }
     </style>
 </head>
